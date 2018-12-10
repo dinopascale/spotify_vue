@@ -1,20 +1,20 @@
 <template lang="pug">
     section.container
-        TheSearchInput/
+        TheHomeHero(v-bind:loggedIn="loggedIn")/
+        TheUserInfo(v-if="loggedIn")
         Equalizer/
 </template>
 
 <script>
-import TheSearchInput from '../components/TheSearchInput'
-import Equalizer from '../components/Equalizer'
+import TheHomeHero from "../components/TheHomeHero";
+import Equalizer from "../components/Equalizer";
+import TheUserInfo from "../components/TheUserInfo";
 
 export default {
-    name: 'Home',
-    data () {
-
-    },
-    components: { TheSearchInput, Equalizer }    
-}
+  name: "Home",
+  props: ["loggedIn"],
+  components: { Equalizer, TheHomeHero, TheUserInfo }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -23,5 +23,9 @@ export default {
   height: 100%;
   padding: 1.8rem;
   position: relative;
+}
+
+.test {
+  font-size: 7.2rem;
 }
 </style>

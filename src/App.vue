@@ -1,23 +1,20 @@
 <template lang="pug">
-    Home/
+    router-view
 </template>
 
 <script>
-import Home from './views/Home'
-
 export default {
-  name: 'app',
-  components: {
-    Home
-  }
-}
+  name: "app"
+};
 </script>
 
 <style>
 * {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: 'Life Savers', cursive;
+  font-family: "Life Savers", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -26,13 +23,5 @@ html {
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
-}
-
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
