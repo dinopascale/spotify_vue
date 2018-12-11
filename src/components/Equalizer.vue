@@ -6,9 +6,7 @@
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -26,7 +24,7 @@ export default {
 }
 
 .equilizer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0) rotate(180deg);

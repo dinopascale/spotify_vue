@@ -16,7 +16,6 @@ const userInfoModule = {
   },
   actions: {
     GET_USERINFO: async ({ commit }) => {
-      console.log('qui');
       try {
         const response = await API.getUserInfo();
         commit('SET_USERINFO', response.data);

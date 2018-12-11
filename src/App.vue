@@ -24,4 +24,8 @@ html {
   margin: 0;
   overflow-x: hidden;
 }
+
+body {
+  padding: 1.8rem;
+}
 </style>

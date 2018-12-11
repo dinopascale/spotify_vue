@@ -14,7 +14,8 @@ export default {
 
     localStorage.setItem(__stateKey, state);
 
-    const scope = 'user-read-private user-read-email user-read-currently-playing';
+    const scope =
+      'user-read-private user-read-email user-read-currently-playing';
 
     let url = 'https://accounts.spotify.com/authorize';
     url += '?response_type=token';
@@ -22,7 +23,7 @@ export default {
     url += '&scope=' + encodeURIComponent(scope);
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
     url += '&state=' + encodeURIComponent(state);
-    url += '&show_dialog=true';
+    url += '&show_dialog=false';
 
     return url;
   },
@@ -82,6 +83,7 @@ export default {
     let url = __baseurl + 'search?';
     url += `q=${encodeURIComponent(q)}`;
     url += `&type=${encodeURIComponent(types)}`;
+    url += `&limit=4`;
 
     try {
       return await axios.get(url, config);

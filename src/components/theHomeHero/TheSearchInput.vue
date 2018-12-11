@@ -1,12 +1,11 @@
 <template lang="pug">
     form(class="search-container" @submit.prevent)
-        input(type="text" class="search" placeholder="Search Artist, Track or Album Name" v-model="query" @focus="$emit('readyToType')")/
-        button(type="submit" class="search-btn" @click="callApi")
-            font-awesome-icon(icon="search")
+        input(type="text" class="search" placeholder="Search Artist, Track, Playlist or Album Name" v-model="query" @focus="$emit('readyToType')")/
+        button(type="submit" class="search-btn" @click="search(query)")
 </template>
 
 <script>
-import API from "../../services/api/Endpoints.js";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -15,21 +14,20 @@ export default {
     };
   },
   methods: {
-    async callApi() {
-      const response = await API.searchSpotify(this.query);
-      console.log(response.data);
-    }
+    ...mapActions({
+      search: "TRY_SEARCH"
+    })
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .search-container {
-  width: 444px;
+  height: 100%;
   margin: 0 auto;
+  padding: 0 1.8rem;
   display: flex;
   flex-flow: row wrap;
-  transition: transform 0.4s 0.2s ease-in;
 }
 
 .search {
@@ -38,10 +36,9 @@ export default {
   font-size: 2rem;
   font-weight: 700;
   flex: 0 0 90%;
+  background: transparent;
   border: none;
   outline: none;
-  border-bottom: 2px solid #000;
-  transition: all 0.4s ease-in-out;
 }
 
 .search-btn {
@@ -52,6 +49,5 @@ export default {
   padding: 0;
   cursor: pointer;
   font-size: 1.6rem;
-  border-bottom: 2px solid #000;
 }
 </style>
