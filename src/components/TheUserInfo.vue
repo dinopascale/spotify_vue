@@ -20,9 +20,18 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media only screen and (max-width: 640px) {
+    flex: 1 0 100%;
+    justify-content: center;
+  }
 }
 .greet {
   font-size: 1.8rem;
   font-weight: 700;
+
+  @media only screen and (max-width: 640px) {
+    margin: 0;
+  }
 }
 </style>

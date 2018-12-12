@@ -28,6 +28,10 @@ export default {
   padding: 0 1.8rem;
   display: flex;
   flex-flow: row wrap;
+
+  @media only screen and (max-width: 640px) {
+    flex: 1 0 100%;
+  }
 }
 
 .search {
@@ -39,6 +43,10 @@ export default {
   background: transparent;
   border: none;
   outline: none;
+  @media only screen and (max-width: 640px) {
+    flex: 0 0 100%;
+    font-size: 1.4rem;
+  }
 }
 
 .search-btn {

@@ -25,7 +25,7 @@ export default {
     url += '&scope=' + encodeURIComponent(scope);
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
     url += '&state=' + encodeURIComponent(state);
-    url += '&show_dialog=false';
+    url += '&show_dialog=true';
 
     return url;
   },

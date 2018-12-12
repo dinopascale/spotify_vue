@@ -28,6 +28,10 @@ export default {
 <style lang="scss" scoped>
 .title-container {
   width: 75%;
+
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .title {
@@ -45,6 +49,10 @@ export default {
     margin: 0;
     opacity: 0;
     font-size: 0;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 4.8rem;
   }
 }
 </style>

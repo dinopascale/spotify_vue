@@ -45,6 +45,9 @@ export default {
     background: #f1f1f1;
     border-bottom: 4px solid #42b883;
     justify-content: space-between;
+    @media only screen and (max-width: 640px) {
+      flex-flow: column-reverse wrap;
+    }
   }
 }
 </style>

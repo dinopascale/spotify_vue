@@ -3,18 +3,18 @@
 </template>
 
 <script>
-import API from '../../services/api/Endpoints.js'
+import API from "../../services/api/Endpoints.js";
 
 export default {
-    data () {
-        return {
-            authLink: null
-        }
-    },
-    mounted () {
-        this.authLink = API.getAuthHref()
-    }
-}
+  data() {
+    return {
+      authLink: null
+    };
+  },
+  mounted() {
+    this.authLink = API.getAuthHref();
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -33,6 +33,10 @@ export default {
   margin: 0 auto;
   padding: 1.2rem;
   background: #42b883;
+
+  @media only screen and (max-width: 640px) {
+    font-size: 1.4rem;
+  }
 }
 </style>
 

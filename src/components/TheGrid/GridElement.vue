@@ -41,6 +41,18 @@ export default {
   &:nth-child(3) {
     border-right: 4px solid #42b883;
   }
+
+  @media only screen and (max-width: 640px) {
+    flex: 0 0 100%;
+    &:nth-child(1) {
+      border-right: none;
+      border-bottom: 4px solid #42b883;
+    }
+    &:nth-child(3) {
+      border-right: none;
+      border-bottom: 4px solid #42b883;
+    }
+  }
 }
 
 .section-title {
@@ -52,6 +64,10 @@ export default {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 6px;
+
+  @media only screen and (max-width: 640px) {
+    text-align: center;
+  }
 }
 
 .element-list {
@@ -59,7 +75,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   padding: 1.6rem 0;
 }
 
@@ -71,7 +87,7 @@ export default {
   img {
     width: 100%;
     max-width: 125px;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
   }
 
   .name {
