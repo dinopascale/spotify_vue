@@ -8,9 +8,9 @@ let __authToken = null;
 export default {
   getAuthHref() {
     const client_id = process.env.VUE_APP_CLIENTID;
-    const redirect_uri =
-      `https://${process.env.APP_NAME}.herokuapp.com/callback` ||
-      'http://localhost:8080/callback';
+    const redirect_uri = process.env.VUE_APP_NAME
+      ? `https://${process.env.VUE_APP_NAME}.herokuapp.com/callback`
+      : 'http://localhost:8080/callback';
 
     const state = generateRandomString(16);
 
