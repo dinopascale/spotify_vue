@@ -8,7 +8,9 @@ let __authToken = null;
 export default {
   getAuthHref() {
     const client_id = process.env.VUE_APP_CLIENTID;
-    const redirect_uri = 'http://localhost:8080/callback';
+    const redirect_uri =
+      `https://${process.env.HEROKU_APP_NAME}.herokuapp.com/callback` ||
+      'http://localhost:8080/callback';
 
     const state = generateRandomString(16);
 
@@ -67,7 +69,7 @@ export default {
     return await axios.get(__baseurl + 'tracks/3n3Ppam7vgaVa1iaRUc9Lp', config);
   },
 
-  async searchSpotify(q) {
+  async searchSpotify(q, types = 'album,track,artist,playlist') {
     if (!__authToken) {
       return false;
     }
@@ -77,8 +79,6 @@ export default {
         Authorization: 'Bearer ' + __authToken
       }
     };
-
-    const types = 'album,track,artist,playlist';
 
     let url = __baseurl + 'search?';
     url += `q=${encodeURIComponent(q)}`;

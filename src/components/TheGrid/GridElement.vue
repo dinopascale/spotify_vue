@@ -71,6 +71,7 @@ export default {
   img {
     width: 100%;
     max-width: 125px;
+    border-radius: .8rem;
   }
 
   .name {
