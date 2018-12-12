@@ -9,7 +9,7 @@ export default {
   getAuthHref() {
     const client_id = process.env.VUE_APP_CLIENTID;
     const redirect_uri =
-      `https://${process.env.HEROKU_APP_NAME}.herokuapp.com/callback` ||
+      `https://${process.env.APP_NAME}.herokuapp.com/callback` ||
       'http://localhost:8080/callback';
 
     const state = generateRandomString(16);
